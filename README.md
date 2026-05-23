@@ -17,7 +17,6 @@ A browser extension that bulk-downloads all patent documents listed on an **inPA
 - ✅ Optional **subfolder name** to organise downloads
 - ✅ Live **progress counter** (e.g. 3 / 18)
 - ✅ Per-file **success / error log** in the popup
-- ✅ Dark premium UI
 
 ---
 
@@ -105,22 +104,14 @@ Or manually download the ZIP and extract it.
 
 ---
 
-## File Structure
+## Privacy & Security
 
-```
-inPASS/
-├── manifest.json       # Extension manifest (v3)
-├── popup.html          # Popup UI
-├── popup.css           # Dark theme styles
-├── popup.js            # Popup logic
-├── content.js          # Page script — fetch & orchestrate downloads
-├── background.js       # Service worker
-└── icons/
-    ├── icon16.png
-    ├── icon32.png
-    ├── icon48.png
-    └── icon128.png
-```
+- No data collection
+- No analytics or tracking
+- No external servers
+- Runs entirely locally in the browser
+- Only accesses the currently open inPASS page
+- Does not bypass authentication or CAPTCHA
 
 ---
 
@@ -142,3 +133,11 @@ inPASS/
 - Files are saved to your **Chrome default Downloads folder** (optionally in a named subfolder).
 - To change the default Downloads location, update it in Chrome Settings → Downloads.
 - The Refresh button clears the log and resets download state
+
+---
+
+## Disclaimer
+
+This project is an independent open-source utility and is not affiliated with, endorsed by, or associated with the Indian Patent Office or the Government of India.
+
+This tool only assists with downloading documents already accessible to the logged-in user through the inPASS portal.
