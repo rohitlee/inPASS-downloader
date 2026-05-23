@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inPASS Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="8" fill="url(#grad)"/>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#4f8ef7"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <path d="M8 10h12M8 14h8M8 18h10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M18 17l2.5 2.5M18 19.5L20.5 17" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="20" cy="18.5" r="3" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>inPASS Downloader</h1>
+        <p>Patent Document Bulk Downloader</p>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar" id="statusBar">
+      <div class="status-dot" id="statusDot"></div>
+      <span id="statusText">Scanning page for documents…</span>
+    </div>
+
+    <!-- Document Count Badge -->
+    <div class="doc-info" id="docInfo" style="display:none">
+      <div class="doc-count-badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 2h7l3 3v9H3V2z" stroke="#4f8ef7" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M9 2v4h4" stroke="#4f8ef7" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <span id="docCount">0</span> documents found
+      </div>
+    </div>
+
+    <!-- Download Directory -->
+    <div class="section">
+      <label class="label" for="downloadDir">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1.5 3.5h4l1 1.5h6v7h-11v-8.5z" stroke="#9ca3af" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        Save to subfolder name <span class="optional">(optional)</span>
+      </label>
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="downloadDir"
+          placeholder="e.g. Patent-201977777777"
+          class="text-input"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+      <p class="hint">Files will be saved into your default Chrome downloads folder. Enter a subfolder name to organise downloads.</p>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="progress-section" id="progressSection" style="display:none">
+      <div class="progress-header">
+        <span class="progress-label">Downloading…</span>
+        <span class="progress-fraction" id="progressFraction">0 / 0</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+      <div class="current-file" id="currentFile">Preparing…</div>
+    </div>
+
+    <!-- Log Panel -->
+    <div class="log-panel" id="logPanel" style="display:none">
+      <div class="log-header">
+        <span>Download Log</span>
+        <button class="clear-btn" id="clearLog">Clear</button>
+      </div>
+      <div class="log-body" id="logBody"></div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button class="btn-secondary" id="btnRefresh" title="Re-scan page">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7a5 5 0 1 1 1.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 11V7.5h3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Refresh
+      </button>
+      <button class="btn-primary" id="btnDownload" disabled>
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 2v8M4 7.5l3.5 3.5L11 7.5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 13h11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Download All
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Works on inPASS patent application pages only</span>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

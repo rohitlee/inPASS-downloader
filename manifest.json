@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "inPASS Document Downloader",
+  "version": "1.0.0",
+  "description": "Automatically download all patent documents listed on an inPASS application page.",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://iprsearch.ipindia.gov.in/*",
+    "http://iprsearch.ipindia.gov.in/*",
+    "*://iprsearch.ipindia.gov.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "inPASS Document Downloader"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://iprsearch.ipindia.gov.in/*",
+        "http://iprsearch.ipindia.gov.in/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
