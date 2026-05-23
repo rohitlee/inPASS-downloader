@@ -12,7 +12,7 @@ A browser extension that bulk-downloads all patent documents listed on an **inPA
 
 ## Features
 - ✅ Auto-detects all documents on the current inPASS application page
-- ✅ Sequential download — no server overload
+- ✅ Downloads all documents into a single ZIP archive
 - ✅ Files saved with **exact filenames** from the website
 - ✅ Optional **subfolder name** to organise downloads
 - ✅ Live **progress counter** (e.g. 3 / 18)
