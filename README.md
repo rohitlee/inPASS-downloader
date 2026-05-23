@@ -1,11 +1,11 @@
-# inPASS Document Downloader — Chrome Extension
+# inPASS Bulk Document Downloader — Chrome Extension
 
 A browser extension that bulk-downloads all patent documents listed on an **inPASS** (Indian Patent Advanced Search System) application page, saving each file with its exact name as shown on the website.
 
 ---
 
 ## Features
-
+![Alt text](img/screenshot.png)
 - ✅ Auto-detects all documents on the current inPASS application page
 - ✅ Sequential download — no server overload
 - ✅ Files saved with **exact filenames** from the website
